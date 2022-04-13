@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/shubhamkr95/vesting-token/issues"
   },
-  "homepage": "https://github.com/shubhamkr95/vesting-token#readme"
+  "homepage": "https://github.com/shubhamkr95/vesting-token#readme",
+  "devDependencies": {
+    "solhint": "^3.3.7",
+    "solhint-plugin-prettier": "^0.0.5"
+  }
 }
