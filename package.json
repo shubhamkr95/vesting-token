@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "solhint": "./node_modules/.bin/solhint -f table contracts/**/*.sol",
-    "prettier:solidity": "./node_modules/.bin/prettier --write contracts/**/*.sol",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prettier:solidity": "./node_modules/.bin/prettier --write contracts/**/*.sol"
   },
   "repository": {
     "type": "git",
@@ -24,6 +23,8 @@
     "solhint-plugin-prettier": "^0.0.5"
   },
   "dependencies": {
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.0",
+    "ethers": "^5.6.3",
+    "hardhat": "^2.9.3"
   }
 }
