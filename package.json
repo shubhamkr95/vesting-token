@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/shubhamkr95/vesting-token#readme",
   "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
     "prettier": "^2.6.2",
     "solhint": "^3.3.7",
     "solhint-plugin-prettier": "^0.0.5"
