@@ -20,6 +20,8 @@
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
     "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "chai": "^4.3.6",
+    "ethereum-waffle": "^3.4.4",
     "prettier": "^2.6.2",
     "solhint": "^3.3.7",
     "solhint-plugin-prettier": "^0.0.5"
