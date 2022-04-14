@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A vesting contract with linear distribution",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "solhint": "./node_modules/.bin/solhint -f table contracts/**/*.sol",
     "prettier:solidity": "./node_modules/.bin/prettier --write contracts/**/*.sol"

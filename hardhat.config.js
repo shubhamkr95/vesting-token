@@ -1,6 +1,12 @@
+import dotenv from "dotenv";
+dotenv.config();
+
+dotenv;
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-module.exports = {
+const hardhatUserConfig = {
  solidity: "0.8.0",
 };
+
+export default hardhatUserConfig;
