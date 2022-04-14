@@ -4,6 +4,8 @@
   "description": "A vesting contract with linear distribution",
   "main": "index.js",
   "scripts": {
+    "solhint": "./node_modules/.bin/solhint -f table contracts/**/*.sol",
+    "prettier:solidity": "./node_modules/.bin/prettier --write contracts/**/*.sol",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
