@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/shubhamkr95/vesting-token#readme",
   "devDependencies": {
+    "prettier": "^2.6.2",
     "solhint": "^3.3.7",
     "solhint-plugin-prettier": "^0.0.5"
   },
