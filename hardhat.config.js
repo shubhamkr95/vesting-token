@@ -1,12 +1,9 @@
-import dotenv from "dotenv";
-dotenv.config();
+require("@nomiclabs/hardhat-waffle");
+require("dotenv").config();
 
-dotenv;
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-const hardhatUserConfig = {
+module.exports = {
  solidity: "0.8.0",
 };
-
-export default hardhatUserConfig;
