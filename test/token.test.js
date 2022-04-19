@@ -21,4 +21,16 @@ describe("Token contract", function () {
    expect(await token.totalSupply()).to.equal(ownerBalance);
   });
  });
+
+ describe("Token properties", function () {
+  it("Token should have name", async function () {
+   const tokenName = await token.name();
+   expect(await token.name()).to.equal(tokenName);
+  });
+
+  it("Token should have symbol", async function () {
+   const tokenSymbol = "VT";
+   expect(await token.symbol()).to.equal(tokenSymbol);
+  });
+ });
 });
