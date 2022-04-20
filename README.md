@@ -29,8 +29,16 @@ To deploy this project run
 
 4. npx hardhat compile
 
+5. npm run solhint
+
 6. npx hardhat run deploy scripts/deploy-token.js --network rinkeby
 
+```
+
+# Code style
+
+```
+npm run prettier:solidity
 ```
 
 # Testing
