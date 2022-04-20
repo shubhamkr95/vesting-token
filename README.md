@@ -38,3 +38,7 @@ To deploy this project run
 ```
 npx hardhat test
 ```
+
+# Deployed Address
+
+Token address: [0x04e4B0192eeA3EB03029ff6F05Cf315B78dBCf6E](https://rinkeby.etherscan.io/address/0x04e4B0192eeA3EB03029ff6F05Cf315B78dBCf6E)
