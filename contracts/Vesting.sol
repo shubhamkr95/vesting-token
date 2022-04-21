@@ -111,7 +111,7 @@ contract Vest {
 
         if (vested[_beneficiary].cliffDuration < block.timestamp)
             token.transferFrom(admin, receiver, _amount);
-        delete vested[_beneficiary];
+        // delete vested[_beneficiary];
     }
 
     function finalVestedAmount(uint256 _duration, uint256 _percentage)
