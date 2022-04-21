@@ -47,8 +47,8 @@ describe("Token Vesting", function () {
     roles[0],
     advisor.address,
     0,
-    1682081183 //UNIX time - Fri Apr 21 2023
-   );
+    1682081183
+   ); //UNIX time - Fri Apr 21 2023
    await createVesting.wait();
    expect(await vesting.isVested(advisor.address)).to.equal(true);
   });
@@ -65,9 +65,26 @@ describe("Token Vesting", function () {
    expect(await token.allowance(admin.address, vesting.address)).to.equal(
     ethers.BigNumber.from(parseTokenTotalSupply)
    );
-  });
 
-  // Create vesting
-  const roles = [0, 1, 2]; // Advisor (0), Partnerships(1), Mentors(2)
+   // Create vesting
+   const roles = [0, 1, 2]; // Advisor (0), Partnerships(1), Mentors(2)
+   const createVesting = await vesting.createVesting(
+    roles[0],
+    advisor.address,
+    0,
+    1713638109
+   ); //UNIX time - Sat Apr 20 2024
+   await createVesting.wait();
+   expect(await vesting.isVested(advisor.address)).to.equal(true);
+
+   // release vesting
+   const releaseVesting = await vesting.releaseVesting(advisor.address);
+   await releaseVesting.wait();
+   advisorBalance = await token.balanceOf(advisor.address);
+   parseAdvisorBalance = advisorBalance.toString();
+   expect(await token.balanceOf(advisor.address)).to.equal(
+    ethers.BigNumber.from(parseAdvisorBalance)
+   );
+  });
  });
 });
