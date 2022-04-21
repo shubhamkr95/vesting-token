@@ -80,11 +80,7 @@ describe("Token Vesting", function () {
    // release vesting
    const releaseVesting = await vesting.releaseVesting(advisor.address);
    await releaseVesting.wait();
-   advisorBalance = await token.balanceOf(advisor.address);
-   parseAdvisorBalance = advisorBalance.toString();
-   expect(await token.balanceOf(advisor.address)).to.equal(
-    ethers.BigNumber.from(parseAdvisorBalance)
-   );
+   expect(await vesting.isVested(admin.address)).to.equal(false);
   });
  });
 });
