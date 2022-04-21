@@ -104,7 +104,7 @@ describe("Token Vesting", function () {
     advisor.address,
     0,
     1713638109
-   );
+   ); //UNIX time - Sat Apr 20 2024
    await createVesting.wait();
    expect(await vesting.isVested(advisor.address)).to.equal(true);
 
@@ -120,6 +120,36 @@ describe("Token Vesting", function () {
    // check vested token rewards
    const balanceOfAdvisor = await token.balanceOf(advisor.address);
    expect(await balanceOfAdvisor).to.not.equal(0);
+  });
+
+  it("Should not receive vested token rewards before cliff", async function () {
+   // Approve vesting contract
+   const tokenTotalSupply = await token.totalSupply();
+   const parseTokenTotalSupply = tokenTotalSupply.toString();
+   const approveContract = await token.approve(
+    vesting.address,
+    ethers.BigNumber.from(parseTokenTotalSupply)
+   );
+   approveContract.wait();
+   expect(await token.allowance(admin.address, vesting.address)).to.equal(
+    ethers.BigNumber.from(parseTokenTotalSupply)
+   );
+
+   // create vesting
+   const roles = [0, 1, 2]; // Advisor (0), Partnerships(1), Mentors(2)
+   // Created Vesting with 2 months cliff
+   const createVesting = await vesting.createVesting(
+    roles[0],
+    advisor.address,
+    5259486, //Unix time - 2 months cliff
+    1713638109
+   ); //UNIX time - Sat Apr 20 2024
+   await createVesting.wait();
+   expect(await vesting.isVested(advisor.address)).to.equal(true);
+
+   await expect(vesting.releaseVesting(advisor.address)).to.be.revertedWith(
+    "Cannot allow vesting during cliff months"
+   );
   });
  });
 });
