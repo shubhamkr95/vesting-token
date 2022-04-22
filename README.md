@@ -29,8 +29,16 @@ To deploy this project run
 
 4. npx hardhat compile
 
+5. npm run solhint
+
 6. npx hardhat run deploy scripts/deploy-token.js --network rinkeby
 
+```
+
+# Code style
+
+```
+npm run prettier:solidity
 ```
 
 # Testing
@@ -42,3 +50,5 @@ npx hardhat test
 # Deployed Address
 
 Token address: [0x04e4B0192eeA3EB03029ff6F05Cf315B78dBCf6E](https://rinkeby.etherscan.io/address/0x04e4B0192eeA3EB03029ff6F05Cf315B78dBCf6E)
+
+Vesting address:[0x8d17Fc04A7c989eF684add22D643e736dfdd4C85](https://rinkeby.etherscan.io/address/0x8d17fc04a7c989ef684add22d643e736dfdd4c85)
