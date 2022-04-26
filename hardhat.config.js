@@ -1,6 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
 require("dotenv").config();
-
+require("solidity-coverage");
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
@@ -16,4 +16,5 @@ module.exports = {
    accounts: [`${RINKEBY_PRIVATE_KEY}`],
   },
  },
+ plugins: ["solidity-coverage"],
 };

@@ -3,3 +3,5 @@ node_modules
 .vscode
 cache
 artifacts
+coverage
+coverage.json
